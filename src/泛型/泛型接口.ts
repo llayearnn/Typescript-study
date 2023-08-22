@@ -15,8 +15,3 @@ console.log(createArray(3, 'x'));
 interface CreateArrayFunc1<T> {
 	(length: number, value: T): T[]
 }
-
-const arr = [1, 2, 3, 'x', 'y']
-const arr1 = [1, 4,6]
-arr1.forEach
-arr.forEach
