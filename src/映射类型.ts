@@ -22,7 +22,7 @@ type Props = {
   c: string[];
 };
 type Type3 = {
-  [key in keyof Props]: number;
+  [key in keyof Props]: Props[key];
 };
 // 前面说的 Partial 就是基于 映射类型
 type MyPartial<T> = {
@@ -30,14 +30,16 @@ type MyPartial<T> = {
   [P in keyof T]?: T[P];
 };
 // 索引查询(访问)类型 T[P],上面用到的
-type PropsA<T> = {
+type PropsA = {
   a: number;
   b: string;
-  c: T[];
+  c: string[];
+  d: boolean;
 };
-// type xx = number | string;
-let a1: PropsA<number> = {
-  a: 10,
-  b: "ss",
-  c: [4],
-};
+type TypeA = PropsA["c"]; // 用来查询属性类型，[]中的属性必须存在于被查询的类型中
+interface PropA {
+  a: PropsA["a"];
+}
+// 索引查询，同时查询多个
+type TypeB = PropsA["c" | "d"];
+type TypeC = PropsA[keyof PropsA];

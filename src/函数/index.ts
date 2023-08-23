@@ -21,12 +21,12 @@ interface SumFun {
   (source: string, subString: string): boolean;
 }
 let mySum2: SumFun;
-mySum2 = function (source, sunstring) {
-  return source.search(sunstring) !== -1;
+mySum2 = function (source, substring) {
+  return source.search(substring) !== -1;
 };
 // 可选参数 可选的参数必须放在必选后面
 let mySum3 = function (x: number, y?: number): number {
-  return x + y;
+  return x + <number>y;
 };
 // 剩余参数
 function PUSH(arr: Array<any>, ...items: any[]) {
