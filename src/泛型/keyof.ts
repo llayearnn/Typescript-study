@@ -17,4 +17,12 @@ type Props = {
 type Type3 = {
   [key in keyof Props]: number;
 };
+type PropsA = {
+  a: number;
+  b: string;
+  c: string[];
+  d: boolean;
+};
+type TypeC = PropsA[keyof PropsA];
+Promise.resolve();
 export {};
