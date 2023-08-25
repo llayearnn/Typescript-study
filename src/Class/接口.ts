@@ -35,7 +35,7 @@ class myClass implements myInterface {
   constructor(name: string) {
     this.name = name;
   }
-  sayHello(a, b): void {
+  sayHello(a: string, b: string): void {
     console.log(a);
     console.log(b);
     console.log("aaa");
