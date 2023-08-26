@@ -3,6 +3,9 @@
 function getPropVal<Type, Key extends keyof Type>(obj: Type, key: Key) {
   return obj[key];
 }
+function setProperty<T, K extends keyof T>(obj: T, key: K, value: T[K]) {
+  obj[key] = value;
+}
 const person = { name: "ohnSmith", age: 18 };
 
 getPropVal(person, "name");
