@@ -29,4 +29,8 @@ let tom: [string, number] = ["Tom", 25];
 // 类型别名
 type myType = string;
 type myNumber = 1 | 2 | 3 | 5;
+
+type CustomArray = (string | number)[];
+
+let arr3: CustomArray = [1, "2", 3];
 export {};
