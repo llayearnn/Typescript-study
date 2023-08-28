@@ -33,4 +33,13 @@ type myNumber = 1 | 2 | 3 | 5;
 type CustomArray = (string | number)[];
 
 let arr3: CustomArray = [1, "2", 3];
+type ILength = {
+  length: number;
+};
+
+function id<T extends ILength>(value: T): T {
+  console.log(value.length);
+  return value;
+}
+
 export {};

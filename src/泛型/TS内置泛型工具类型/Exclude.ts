@@ -3,3 +3,10 @@
 
 type T0 = Exclude<"a" | "b" | "c", "a">;
 // type T0 = "b" | "c"
+type Person = {
+  name: string;
+  age: string;
+  location: string;
+};
+
+export {};
