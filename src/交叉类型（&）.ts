@@ -5,6 +5,9 @@ interface Person {
 interface Contact {
   phone: string;
 }
+interface Contact {
+  phone: string;
+}
 type Family = {
   num: number;
 };
@@ -23,10 +26,10 @@ let obj1: PersonDetail = {
 interface A {
   fn: (args: number) => string;
 }
-interface B extends A {
-  // 继承就会报错  类型不兼容
-  fn: (args: string) => string;
-}
+// interface B extends A { // 会报错
+//   // 继承就会报错  类型不兼容
+//   fn: (args: string) => string;
+// }
 interface C {
   fn: (args: number) => string;
 }

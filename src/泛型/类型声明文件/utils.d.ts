@@ -13,6 +13,8 @@ declare function changeDirection(
 // declare type GetPoint = (point: Point) => void;
 export interface GetPoint {
   (point: Point): void;
+  Judge(s: string): boolean;
+  test: () => void;
 }
 declare const getPoint: GetPoint;
 // 类型提供好 需要使用模块化方案中提供的模块化语法来导出生命好的类型，才可以在其他.ts文件导入使用

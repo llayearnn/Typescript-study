@@ -5,7 +5,7 @@ type Person = {
   age: string;
   location: string;
 };
-type PersonWithoutLocation = Omit<Person, "location">;
+type PersonWithoutLocation = Omit<Person, "location" | "age">;
 
 // PersonWithoutLocation equal to QuantumPerson
 type QuantumPerson = {
