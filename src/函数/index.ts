@@ -2,7 +2,27 @@
 let mySum = function (x: number, y: number): number {
   return x + y;
 };
+export function getPropVal<Obj, Key extends keyof Obj>(obj: Obj, key: Key) {
+  return obj[key];
+}
+export const myInstall = <
+  T extends { name: string; install: any },
+  E extends Record<string, any>
+>(
+  main: T,
+  extra?: E
+): T => {
+  if (extra) {
+    for (const [key, com] of Object.entries(extra)) {
+      (main as any)[key] = com;
+    }
+    main.install = (app: any): void => {
+      app.component(main.name, main);
+    };
+  }
 
+  return main;
+};
 const MyAdd = (x: number, y: number): number => {
   return x + y;
 };
